@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-project(Projects C CXX)
+project(Projects C CXX) # TODO: set project name
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -23,7 +23,8 @@ else ()
     set(IN_SOURCE_BUILD 0)
 endif ()
 
-set(SDK_ROOT "C:/Users/Andre/Projects/ultralight-sdk-latest-win-x64")
+set(SDK_ROOT "path/to/ultralight/sdk/root") # TODO: set SDK root
+
 
 set(ULTRALIGHT_INCLUDE_DIR "${SDK_ROOT}/include")
 set(ULTRALIGHT_BINARY_DIR "${SDK_ROOT}/bin")
@@ -80,13 +81,10 @@ if (${IN_SOURCE_BUILD})
                 COMMAND ${CMAKE_COMMAND} -E copy_directory "${APPCORE_DIR}/lib/" "${SDK_ROOT}/lib"
         )
     endif ()
-
-#    add_dependencies(firstProject CopySDK)
-
 endif ()
 
 
-set(APP_NAME templateUltralightReact)
+set(APP_NAME templateUltralightReact) # TODO: set APP_NAME
 include_directories("${ULTRALIGHT_INCLUDE_DIR}")
 link_directories("${ULTRALIGHT_LIBRARY_DIR}")
 link_libraries(UltralightCore Ultralight WebCore AppCore)
@@ -94,6 +92,7 @@ link_libraries(UltralightCore Ultralight WebCore AppCore)
 if (PORT MATCHES "UltralightMac")
     SET(CMAKE_INSTALL_RPATH ".")
 endif ()
+
 include_directories(${APP_NAME})
 add_executable(${APP_NAME} "src/main.cpp"
         "src/Engine/BaseApp.h"
