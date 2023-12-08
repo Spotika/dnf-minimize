@@ -1,7 +1,7 @@
 #include "Engine/BaseApp.h"
 #include "MainApp.h"
 
- namespace ul = ultralight;
+namespace ul = ultralight;
 
 int main() {
     BaseApp::RunServer(); // start the server if it is not running
