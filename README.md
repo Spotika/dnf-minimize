@@ -42,4 +42,5 @@ Launching the application
 cd ./build
 yourAppName.exe
 ```
-**It 's important that .the exe file will be named the same as your application**
+**It 's important that the .exe file will be named the same as your application**
+
