@@ -40,7 +40,7 @@ After this step, all the assembly files will be written to build
 Launching the application
 ```
 cd ./build
-yourAppName.exe
+ninja
 ```
 **It 's important that the .exe file will be named the same as your application**
 
