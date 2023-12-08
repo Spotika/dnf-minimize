@@ -1,0 +1,7 @@
+venv
+cmake-build-reload
+build
+.idea
+
+react-user-interface/node_modules
+react-user-interface/build

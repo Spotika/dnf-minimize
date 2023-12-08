@@ -1,0 +1,30 @@
+#root {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.example {
+  margin: 10px;
+  font-family: "JetBrains Mono", serif;
+  background: linear-gradient(135deg, #3494e6, #ec6ead); /* Градиентный фон */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0;
+    font-size: 24px; /* Увеличиваем размер текста */
+    font-weight: bold;
+    text-align: center; /* Выравниваем текст по центру */
+  }
+}
