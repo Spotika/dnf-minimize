@@ -1,0 +1,1 @@
+// #define PRODUCTION // TODO: add when app going to deploy for use in production without debug
