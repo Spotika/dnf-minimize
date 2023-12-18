@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-project(Projects C CXX) # TODO: set project name
+project(UltralightReactTemplate C CXX) # TODO: set project name
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -24,7 +24,6 @@ else ()
 endif ()
 
 set(SDK_ROOT "path/to/ultralight/sdk/root") # TODO: set SDK root
-
 
 set(ULTRALIGHT_INCLUDE_DIR "${SDK_ROOT}/include")
 set(ULTRALIGHT_BINARY_DIR "${SDK_ROOT}/bin")

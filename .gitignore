@@ -1,7 +1,7 @@
 venv
 cmake-build-reload
+cmake-build-debug
 build
 .idea
-
 react-user-interface/node_modules
 react-user-interface/build

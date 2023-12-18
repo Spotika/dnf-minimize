@@ -8,6 +8,7 @@ import {
 import NotFound from "./built-in/pages/not-found/NotFound";
 import Layout from "./built-in/layout";
 import Example from "./built-in/pages/example/example";
+import {HelmetProvider} from "react-helmet-async";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Example/>
             },
+            {
+                path: 'about',
+                element: <div>About</div>,
+            }
         ]
     }
 ]);

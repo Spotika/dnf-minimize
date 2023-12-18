@@ -2,7 +2,7 @@
 
 using namespace ultralight;
 
-MainApp::MainApp() : BaseApp(1000, 1000, false, 0, 1.5) {}
+MainApp::MainApp() : BaseApp(1000, 1000, false, kWindowFlags_Titled | kWindowFlags_Resizable | kWindowFlags_Maximizable, 1.5) {}
 
 
 void MainApp::OnDOMReady(ul::View *caller, uint64_t frame_id, bool is_main_frame, const ul::String &url) {
