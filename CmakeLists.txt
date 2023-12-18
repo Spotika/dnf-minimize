@@ -93,10 +93,11 @@ if (PORT MATCHES "UltralightMac")
 endif ()
 
 include_directories(${APP_NAME})
-add_executable(${APP_NAME} "src/main.cpp"
-        "src/Engine/BaseApp.h"
+add_executable(${APP_NAME} src/main.cpp
+        src/Engine/BaseApp.h
         src/Engine/src/BaseApp.cpp
-        src/src/MainApp.cpp)
+        src/src/MainApp.cpp
+        src/Engine/config.h)
 
 # Copy all binaries to target directory
 add_custom_command(TARGET ${APP_NAME} POST_BUILD
