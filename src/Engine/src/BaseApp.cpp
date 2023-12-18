@@ -78,8 +78,12 @@ void BaseApp::OnChangeTitle(ultralight::View *caller,
 void BaseApp::RunServer() {
     if (std::system("python ../check_port.py")) {
         _putenv("BROWSER=none"); // it for no browser
+
+        // building react
+        std::system("cd ../react-user-interface & npm run build");
+
         // starting React server
-        static std::thread serverThread([] () {system("cd ../react-user-interface & npm run start");});
+        static std::thread serverThread([] () {system("cd ../react-user-interface & serve -s build");});
 
         // waiting for server to start
         while (std::system("python ../check_port.py")) {std::this_thread::sleep_for(std::chrono::seconds(1));}
