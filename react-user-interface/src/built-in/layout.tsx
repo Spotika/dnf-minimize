@@ -6,7 +6,7 @@ import "../cpp-window";
 
 const Layout: React.FC = () => {
     useEffect(() => {
-        window.checkBrowserView();
+        window.checkBrowserView(); // For control access to app
     }, []);
     return (
         <>

@@ -1,9 +1,12 @@
 function cppIsBrowserAllowed() {
-    return "true"; // change to "false" if you want to run app only from ultralight
+    return "true"; // TODO: change to "false" if you want to run app only from ultralight
 }
 
 
 function checkBrowserView(evt) {
+    // If the function cppIsBrowserAllowed returns false, the page will not load.
+    // cppIsBrowserAllowed - is JS bind,
+    // This function can be overloaded in c++ and return true, even if its JS version returns false.
     if (cppIsBrowserAllowed() === "false") {
         const rootElement = document.getElementById("root");
         const newText = document.createTextNode('Browser not allowed');
@@ -15,6 +18,7 @@ function checkBrowserView(evt) {
 
 /*
 This is an example of functions that are bound to C++
+You need write interfaces for overloading functions.
  */
 function cppExampleMessage() {
     return "You are in browser!";
