@@ -1,5 +1,5 @@
 function cppIsBrowserAllowed() {
-    return "false"; // change to false if you want to run app only from ultralight
+    return "true"; // change to "false" if you want to run app only from ultralight
 }
 
 
@@ -11,7 +11,6 @@ function checkBrowserView(evt) {
             rootElement.parentNode.replaceChild(newText, rootElement);
         }
     }
-
 }
 
 /*
