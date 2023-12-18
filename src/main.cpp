@@ -10,6 +10,6 @@ int main() {
     MainApp app;
     app.Run();
 
-    BaseApp::StopServer();
+    BaseApp::StopServer(); // stopping whole app and server
 }
 

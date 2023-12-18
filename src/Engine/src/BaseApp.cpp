@@ -24,18 +24,18 @@ BaseApp::BaseApp(int width, int height, bool fullscreen, unsigned int window_fla
 
     overlay_->view()->set_load_listener(this);
     overlay_->view()->set_view_listener(this);
-    overlay_->view()->LoadURL("http://localhost:3000/");
+    overlay_->view()->LoadURL("http://localhost:3000/"); // TODO: set url you need. localhost:3000 is default for react
 }
 
 
 bool BaseApp::OnMouseEvent(const ultralight::MouseEvent &evt) {
+    // Event handling, according to the scale
     auto cp = evt;
     double scale = overlay_->view()->device_scale();
     cp.x = static_cast<int>(cp.x / scale);
     cp.y = static_cast<int>(cp.y / scale);
 
     overlay_->view()->FireMouseEvent(cp);
-
     return false;
 }
 
@@ -77,11 +77,12 @@ void BaseApp::OnChangeTitle(ultralight::View *caller,
 
 void BaseApp::RunServer() {
     if (std::system("python ../check_port.py")) {
-        _putenv("BROWSER=none"); // it for no browser
+        _putenv("BROWSER=none"); // it for no browser open
 
-        // building react
+#ifndef PRODUCTION
+        // building react, not for production
         std::system("cd ../react-user-interface & npm run build");
-
+#endif
         // starting React server
         static std::thread serverThread([] () {system("cd ../react-user-interface & serve -s build");});
 

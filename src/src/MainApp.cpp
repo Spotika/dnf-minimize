@@ -2,7 +2,13 @@
 
 using namespace ultralight;
 
-MainApp::MainApp() : BaseApp(1000, 1000, false, kWindowFlags_Titled | kWindowFlags_Resizable | kWindowFlags_Maximizable, 1.5) {}
+MainApp::MainApp() : BaseApp(WIDTH,
+                             HEIGHT,
+                             FULL_SCREEN,
+                             kWindowFlags_Titled | // TODO: set your custom flags. See ultralight docs
+                             kWindowFlags_Resizable |
+                             kWindowFlags_Maximizable,
+                             DEVICE_SCALE) {}
 
 
 void MainApp::OnDOMReady(ul::View *caller, uint64_t frame_id, bool is_main_frame, const ul::String &url) {
@@ -18,10 +24,15 @@ void MainApp::OnDOMReady(ul::View *caller, uint64_t frame_id, bool is_main_frame
     ///
     /// Binding functions
     ///
-    global["cppExampleMessage"] = BindJSCallbackWithRetval(&MainApp::ExampleMessage);
-    global["cppIsBrowserAllowed"] = BindJSCallbackWithRetval(&BaseApp::MakeServerAvailable); // This function allows the application to load
+    global["cppExampleMessage"] = BindJSCallbackWithRetval(&MainApp::ExampleMessage); // this for example page
+    // TODO:
+    //  delete if you don`t use example page
+
+    global["cppIsBrowserAllowed"] = BindJSCallbackWithRetval(
+            &BaseApp::MakeServerAvailable); // This function allows the application to load
 }
 
+// TODO: delete if you don`t use example page
 ul::JSValue MainApp::ExampleMessage(const ul::JSObject &thisObject, const ul::JSArgs &args) {
     return ul::JSString("You are in ultralight!");
 }
