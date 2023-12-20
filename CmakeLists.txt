@@ -23,7 +23,7 @@ else ()
     set(IN_SOURCE_BUILD 0)
 endif ()
 
-set(SDK_ROOT "C:/path/to/ultralight) # TODO: set SDK root
+set(SDK_ROOT "C:/path/to/ultralight") # TODO: set SDK root
 
 set(ULTRALIGHT_INCLUDE_DIR "${SDK_ROOT}/include")
 set(ULTRALIGHT_BINARY_DIR "${SDK_ROOT}/bin")
