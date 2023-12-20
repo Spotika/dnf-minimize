@@ -66,7 +66,7 @@ npm install
 ```
 
 Install serve if you don\`t have
-```
+```sh
 npm install --global serve
 ```
 
