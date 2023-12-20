@@ -33,7 +33,7 @@ Both of these technologies have a number of disadvantages. For developing user i
 
 ## ✨ Ultralight + React ✨
 #### Advantages 
-* A common technology for writing an interface using React.
+* A common technology for writing an interface using React. 🍺
 * You can design interface in online with dynamic updates using react-scripts
 * You can use majority of HTML5 functions like animations, metadata and other
 * SCSS styling

@@ -4,4 +4,4 @@
 #define WIDTH 1000
 #define HEIGHT 1000
 #define FULL_SCREEN false
-#define DEVICE_SCALE 1.5
+#define DEVICE_SCALE 1
