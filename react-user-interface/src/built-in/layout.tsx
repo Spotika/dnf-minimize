@@ -3,6 +3,8 @@ import {HelmetProvider} from "react-helmet-async";
 import {Outlet} from "react-router-dom"
 import {useEffect} from "react";
 import "../cpp-window";
+import "./clear_styles.scss"
+
 
 const Layout: React.FC = () => {
     useEffect(() => {
