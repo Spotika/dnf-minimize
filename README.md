@@ -1,4 +1,9 @@
+<p align="center">
+  <img src="https://github.com/Spotika/ultralight-react-template-win/blob/master/media/tools.png" alt="drawing" width="500"/>
+</p>
+
 # About
+
 Welcome to the Ultralight React Project Template for windows! This template provides a streamlined setup for developing desktop applications with Ultralight, a lightweight and fast web framework, and React, a popular JavaScript library with **TypeScript** implementation for building user interfaces.
 
 # Why is this technology needed? 🤔
