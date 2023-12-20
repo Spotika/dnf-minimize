@@ -24,7 +24,7 @@ BaseApp::BaseApp(int width, int height, bool fullscreen, unsigned int window_fla
 
     overlay_->view()->set_load_listener(this);
     overlay_->view()->set_view_listener(this);
-    overlay_->view()->LoadURL("http://localhost:2247/"); // TODO: set url you need. localhost:3000 is default for react
+    overlay_->view()->LoadURL("http://localhost:2247"); // TODO: set url you need. localhost:3000 is default for react
 }
 
 

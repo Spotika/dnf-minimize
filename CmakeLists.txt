@@ -23,7 +23,7 @@ else ()
     set(IN_SOURCE_BUILD 0)
 endif ()
 
-set(SDK_ROOT "C:/path/to/ultralight) # TODO: set SDK root
+set(SDK_ROOT "C:/path/to/ultralight") # TODO: set SDK root
 
 set(ULTRALIGHT_INCLUDE_DIR "${SDK_ROOT}/include")
 set(ULTRALIGHT_BINARY_DIR "${SDK_ROOT}/bin")
@@ -97,7 +97,8 @@ add_executable(${APP_NAME} src/main.cpp
         src/Engine/BaseApp.h
         src/Engine/src/BaseApp.cpp
         src/src/MainApp.cpp
-        src/Engine/config.h)
+        src/Engine/config.h
+        src/Engine/helpers.h)
 
 # Copy all binaries to target directory
 add_custom_command(TARGET ${APP_NAME} POST_BUILD
