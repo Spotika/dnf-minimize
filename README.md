@@ -82,7 +82,7 @@ All lines of the file that need to be changed are marked with the comment "TODO"
 You can open `my-ultralight-project` and set Visual Studio toolchain. Then clion will build and run project with ninja.
 
 ### For pure cmake
-Now you in `my-ultralight-project`
+Now you in `my-ultralight-project`, use Visual Studio 2017 make files
 ```sh
 cmake -B ./build
 cmake --build ./build
