@@ -43,8 +43,8 @@ Both of these technologies have a number of disadvantages. For developing user i
 ### Requires
 * Node.js
 * CMake
-* Visual Studio 2017 or higher
-* Python 3.12
+* Visual Studio >= 2017
+* Python >= 3.10
 * Serve
 * [Ultralight windows SDK](https://github.com/ultralight-ux/Ultralight/releases)
 
