@@ -1,46 +1,95 @@
-# Ultralight react template
-Welcome to the Ultralight React Project Template for windows! This template provides a streamlined setup for developing desktop applications with Ultralight, a lightweight and fast web framework, and React, a popular JavaScript library for building user interfaces.
+# About
+Welcome to the Ultralight React Project Template for windows! This template provides a streamlined setup for developing desktop applications with Ultralight, a lightweight and fast web framework, and React, a popular JavaScript library with **TypeScript** implementation for building user interfaces.
 
-## Getting started
-### Dependencies
-* python 3.10 or later
-* Node.js (20.10.0 or higher) + npm (10.2.4 or higher)
-* Visual Studio 2017 or later (select the C++ tools during install)
-*  [CMake](https://cmake.org/download/) _(Add it to your PATH during install)_
-* Ninja 1.10.2 or later
-* [Ultralight windows SDK 1.3.0.](https://github.com/ultralight-ux/Ultralight/releases)
+# Why is this technology needed? 🤔
+To implement a beautiful and supported frontend and backend in C++, there are the following popular technologies:
+* SFML
+* QT
+Some information about this toolchains
+## SFML
+[About SFML](https://www.sfml-dev.org)
+#### Advantages
+* Simple and fast
+* low level graphics in primitives provides the best control
+* Good for simple game dev or for special projects
+#### Disadvantages
+* It is not intended to create a UI out of the box. To do this, you need to spend time implementing the basic components for the basic layout
+## QT
+[About QT](https://www.qt.io)
+#### Advantages
+* You can fast create simple UI and connect it co c++
+* Qt designer and Qt creator instruments
+* A lot of widgets written earlier that solve most problems
+#### Disadvantages
+* Hard to design and apply styles
+* Hard to use animations
 
-### Installation step by step
+Both of these technologies have a number of disadvantages. For developing user interface you write much more terrible and routine code then you can write in React and connect it to ultralight.
 
-Clonning repo
+## ✨ Ultralight + React ✨
+#### Advantages 
+* A common technology for writing an interface using React.
+* You can design interface in online with dynamic updates using react-scripts
+* You can use majority of HTML5 functions like animations, metadata and other
+* SCSS styling
+* TypeScript support
+* You can link C++ with JS
+#### Disadvantages 
+* This is currently only available for windows (*there is no version for Linux and Mac*😢)
+* You need more than one tool for work (Node.js, Python, C++). **installation guide**
+
+# Getting started
+## Installation
+### Requires
+* Node.js
+* CMake
+* Visual Studio 2017 or higher
+* Python 3.12
+* Serve
+* [Ultralight windows SDK](https://github.com/ultralight-ux/Ultralight/releases)
+
+### Ultralight SDK
+Download [SDK](https://github.com/ultralight-ux/Ultralight/releases/download/v1.3.0/ultralight-sdk-1.3.0-win-x64.7z) (download link), extract it and remember path to SDK.
+
+
+Clone repo and it will be your project root
+
+```sh
+git clone https://github.com/Spotika/ultralight-react-template-win.git ./my-ultralight-project
+cd ./my-ultralight-project
 ```
-git clone https://github.com/Spotika/ultralight-react-template-win.git
-cd ./ultralight-react-template-win
-```
 
-You are now in the main project folder. Now you have to install all react dependencies.
-```
+Install react dependences
+```sh
 cd ./react-user-interface
 npm install
 ```
- 
-Edit `CmakeLists.txt` specifying the path to the ultralight sdk on line 26 of the file. `set(SDK_ROOT "path/to/ultralight/sdk/root")`
 
-Then set name for your app on 87 line if the file. `set(APP_NAME yourAppName)`
-
-### Compile and run
-
-Run this from root directory.
+Install serve if you don\`t have
 ```
-cmake -DCMAKE_MAKE_PROGRAM=ninja -G Ninja -S . -B ./build
+npm install --global serve
 ```
 
-After this step, all the assembly files will be written to build
+## Building and running
+To run correctly, you need to do the following things:
+### Configure CmakeLists.txt
+All lines of the file that need to be changed are marked with the comment "TODO"
+* Change name of your project name `3: project(YourProjectName C CXX)` 
+* Change app name `86: set(APP_NAME youtAppName)` it will be build target
+* Set path to ultralight SDK `26: set(SDK_ROOT "C:/path/to/ultralight")`
 
-Launching the application
-```
-cd ./build
-ninja
-```
-**It 's important that the .exe file will be named the same as your application**
+### For Clion
+You can open `my-ultralight-project` and set Visual Studio toolchain. Then clion will build and run project with ninja.
 
+### For pure cmake
+Now you in `my-ultralight-project`
+```sh
+cmake -B ./build
+cmake --build ./build
+```
+
+Then you can find `.exe` with name of your app file in directory `./build/Debug/`
+
+> Important! You should run `.exe` only from `./build` folder: `cd ./build & ./Debug/yourAppName.exe` it will be fixed soon.
+# Extending your App
+Coming soon
