@@ -6,17 +6,16 @@ import {
 } from 'react-router-dom';
 import NotFound from "./built-in/pages/not-found/NotFound";
 import Layout from "./built-in/layout";
-import Example from "./built-in/pages/example/example";
+import Main from "./pages/main/main";
 
 const router = createBrowserRouter([
     {
         element: <Layout/>,
         errorElement: <NotFound/>,
         children: [
-            // TODO: add here your own components by template
             {
                 path: '/',
-                element: <Example/>
+                element: <Main/>
             }
         ]
     }
