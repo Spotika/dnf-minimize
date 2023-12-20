@@ -66,7 +66,7 @@ npm install
 ```
 
 Install serve if you don\`t have
-```sh
+```
 npm install --global serve
 ```
 
@@ -82,7 +82,7 @@ All lines of the file that need to be changed are marked with the comment "TODO"
 You can open `my-ultralight-project` and set Visual Studio toolchain. Then clion will build and run project with ninja.
 
 ### For pure cmake
-Now you in `my-ultralight-project`, use Visual Studio 2017 make files
+Now you in `my-ultralight-project`
 ```sh
 cmake -B ./build
 cmake --build ./build
@@ -90,6 +90,13 @@ cmake --build ./build
 
 Then you can find `.exe` with name of your app file in directory `./build/Debug/`
 
-> Important! You should run `.exe` only from `./build` folder: `cd ./build & ./Debug/yourAppName.exe` it will be fixed soon.
-# Extending your App
-Coming soon
+> Important! You should run `.exe` only from `./build` folder: `cd ./build && ./Debug/yourAppName.exe` it will be fixed soon.
+
+# Roadmap
+## Readme
+- [ ] About extending application ❌
+- [ ] About JS binding ❌
+## Ultralight
+- [ ] Multi threading system, that provides parallel calculation and rendering ❌
+- [ ] More flexible configuretion ❌
+- [ ] Add support for linux ❌
