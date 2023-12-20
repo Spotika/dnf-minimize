@@ -4,7 +4,7 @@ import sys
 
 def check_port():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    result = sock.connect_ex(('localhost', 3000))
+    result = sock.connect_ex(('localhost', 2247))
 
     if result == 0:
         sys.exit(0)

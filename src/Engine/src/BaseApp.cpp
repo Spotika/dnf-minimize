@@ -17,14 +17,14 @@ BaseApp::BaseApp(int width, int height, bool fullscreen, unsigned int window_fla
     BaseApp::OnResize(window_.get(), window_->width(), window_->height());
 
     overlay_->view()->set_device_scale(device_scale);
-
+    
     window_->set_listener(this);
 
     app_->set_listener(this);
 
     overlay_->view()->set_load_listener(this);
     overlay_->view()->set_view_listener(this);
-    overlay_->view()->LoadURL("http://localhost:3000/"); // TODO: set url you need. localhost:3000 is default for react
+    overlay_->view()->LoadURL("http://localhost:2247/"); // TODO: set url you need. localhost:3000 is default for react
 }
 
 
@@ -79,12 +79,14 @@ void BaseApp::RunServer() {
     if (std::system("python ../check_port.py")) {
         _putenv("BROWSER=none"); // it for no browser open
 
-#ifndef PRODUCTION
+#ifndef PRODUCTIO
         // building react, not for production
         std::system("cd ../react-user-interface & npm run build");
 #endif
         // starting React server
-        static std::thread serverThread([] () {system("cd ../react-user-interface & serve -s build");});
+        static std::thread serverThread([] () {system("cd ../react-user-interface & serve -l 2247 -s build");});
+
+        serverThread.detach();
 
         // waiting for server to start
         while (std::system("python ../check_port.py")) {std::this_thread::sleep_for(std::chrono::seconds(1));}
@@ -93,11 +95,5 @@ void BaseApp::RunServer() {
 
 void BaseApp::StopServer() {
     // kill all threads and react server
-    DWORD pidToTerminate = GetCurrentProcessId();
-    HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, pidToTerminate);
-    if (hProcess == nullptr) {
-        exit(1);
-    }
-    TerminateProcess(hProcess, 0);
-    CloseHandle(hProcess);
+    std::system("..\\killserver.bat");
 }
